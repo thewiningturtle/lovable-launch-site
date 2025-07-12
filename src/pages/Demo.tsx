@@ -1,50 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { Calendar, CheckCircle, Phone, MessageCircle, Clock, Users, Award } from 'lucide-react';
+import { Calendar, CheckCircle, Clock, Users, Award } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Demo = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    course: '',
-    experience: '',
-    preferredTime: '',
-    message: ''
-  });
+  const form = useRef(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    toast({
-      title: "Demo Scheduled Successfully!",
-      description: "We'll contact you within 24 hours to confirm your demo session.",
-    });
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      course: '',
-      experience: '',
-      preferredTime: '',
-      message: ''
-    });
-  };
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: value
-    }));
+    emailjs.sendForm(
+      'YOUR_SERVICE_ID',
+      'YOUR_TEMPLATE_ID',
+      form.current!,
+      'YOUR_PUBLIC_KEY'
+    ).then(
+      () => {
+        toast({
+          title: "Demo Scheduled Successfully!",
+          description: "We'll contact you within 24 hours to confirm your demo session.",
+        });
+        (form.current as HTMLFormElement).reset();
+      },
+      (error) => {
+        console.error(error);
+        toast({
+          title: "Error",
+          description: "Something went wrong. Please try again later.",
+        });
+      }
+    );
   };
 
   const courses = ["DevOps Masterclass", "Automation Testing", "Java Full Stack", ".NET Development"];
@@ -85,8 +79,72 @@ const Demo = () => {
         </div>
       </section>
 
-      {/* Demo Benefits */}
-      {/* (rest of the component remains unchanged) */}
+      {/* Form Section */}
+      <section className="py-12 px-4 max-w-3xl mx-auto">
+        <Card>
+          <CardHeader>
+            <CardTitle>Schedule Your Demo</CardTitle>
+            <CardDescription>Fill in your details and we'll contact you to confirm</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <Label>Full Name *</Label>
+                  <Input name="name" required placeholder="Enter your full name" />
+                </div>
+                <div>
+                  <Label>Phone Number *</Label>
+                  <Input name="phone" required placeholder="+91 98765 43210" />
+                </div>
+              </div>
+              <div>
+                <Label>Email Address *</Label>
+                <Input name="email" type="email" required placeholder="your.email@example.com" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <Label>Interested Course *</Label>
+                  <Select name="course" required>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a course" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {courses.map(course => (
+                        <SelectItem key={course} value={course}>{course}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <Label>Experience Level</Label>
+                  <Input name="experience" placeholder="e.g. 3 years" />
+                </div>
+              </div>
+              <div>
+                <Label>Preferred Time Slot</Label>
+                <Select name="preferredTime">
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select preferred time" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {timeSlots.map(slot => (
+                      <SelectItem key={slot} value={slot}>{slot}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <Label>Additional Message (Optional)</Label>
+                <Textarea name="message" placeholder="Any specific questions or requirements..." />
+              </div>
+              <Button type="submit" className="w-full">
+                <Calendar className="mr-2 h-5 w-5" /> Schedule My Demo
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      </section>
 
       <Footer />
     </div>

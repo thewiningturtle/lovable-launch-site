@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "@emailjs/browser": path.resolve(__dirname, "node_modules/@emailjs/browser"), // ✅ this fixes it!
     },
   },
   build: {

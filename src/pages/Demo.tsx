@@ -63,7 +63,7 @@ const Demo = () => {
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            🗕️ Book Your <span className="text-yellow-300">Free Demo Class</span>
+            📅 Book Your <span className="text-yellow-300">Free Demo Class</span>
           </h1>
           <p className="text-xl mb-8 text-blue-100">
             Live sessions with expert instructors. No credit card required.

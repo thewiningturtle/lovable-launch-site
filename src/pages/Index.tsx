@@ -99,8 +99,8 @@ const Index = () => {
             Get Job-Ready in <span className="text-yellow-300">12 Weeks</span>
           </h1>
           <h2 className="text-xl md:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto">
-            Master DevOps, Testing, Java & More! India's most trusted IT training platform for professionals and job seekers.
-          </h2>
+            Master <strong>DevOps</strong>, <strong>Java</strong>, and <strong>Automation Testing</strong> at <span className="text-yellow-400">LinuxForge</span> – India’s most trusted IT training institute.
+          </h2>    
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/demo">
               <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 text-lg">

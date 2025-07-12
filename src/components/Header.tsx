@@ -21,7 +21,7 @@ const Header = () => {
               <span className="text-white font-bold text-xl">IT</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-xl text-gray-900">TechTraining</span>
+              <span className="font-bold text-xl text-gray-900">LinuxForge</span>
               <span className="text-xs text-gray-500">Institute</span>
             </div>
           </Link>

@@ -41,7 +41,7 @@ const Demo = () => {
     );
   };
 
-  const courses = ["DevOps Masterclass", "Automation Testing", "Java Full Stack", ".NET Development"];
+  const courses = ["Data Engineering", "DevOps Masterclass", "Machine Learning & AI", "Java Full Stack Development"];
   const timeSlots = ["10:00 AM - 11:00 AM", "2:00 PM - 3:00 PM", "4:00 PM - 5:00 PM", "6:00 PM - 7:00 PM", "8:00 PM - 9:00 PM"];
   const benefits = [
     { icon: Users, title: "Live Interaction", description: "Direct interaction with industry experts" },
@@ -104,7 +104,50 @@ const Demo = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <Label>Interested Course *</Label>
+                  <Label>City/Location *</Label>
+                  <Input name="location" required placeholder="e.g. Pune, Mumbai, Bangalore" />
+                </div>
+                <div>
+                  <Label>Current Job Role</Label>
+                  <Input name="currentRole" placeholder="e.g. Software Developer, Analyst" />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <Label>Years of Experience</Label>
+                  <Select name="experience">
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select experience" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="fresher">Fresher (0 years)</SelectItem>
+                      <SelectItem value="1-2">1-2 years</SelectItem>
+                      <SelectItem value="3-5">3-5 years</SelectItem>
+                      <SelectItem value="6-10">6-10 years</SelectItem>
+                      <SelectItem value="10+">10+ years</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <Label>Educational Background</Label>
+                  <Select name="education">
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select education" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="btech">B.Tech/B.E.</SelectItem>
+                      <SelectItem value="mtech">M.Tech/M.E.</SelectItem>
+                      <SelectItem value="bca">BCA</SelectItem>
+                      <SelectItem value="mca">MCA</SelectItem>
+                      <SelectItem value="bsc">B.Sc (IT/CS)</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <Label>Primary Course Interest *</Label>
                   <Select name="course" required>
                     <SelectTrigger>
                       <SelectValue placeholder="Select a course" />
@@ -117,8 +160,17 @@ const Demo = () => {
                   </Select>
                 </div>
                 <div>
-                  <Label>Experience Level</Label>
-                  <Input name="experience" placeholder="e.g. 3 years" />
+                  <Label>Preferred Learning Mode</Label>
+                  <Select name="learningMode">
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select mode" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="online">Online</SelectItem>
+                      <SelectItem value="offline">Offline</SelectItem>
+                      <SelectItem value="hybrid">Hybrid (Online + Offline)</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
               <div>
@@ -135,8 +187,31 @@ const Demo = () => {
                 </Select>
               </div>
               <div>
-                <Label>Additional Message (Optional)</Label>
-                <Textarea name="message" placeholder="Any specific questions or requirements..." />
+                <Label>Career Goals</Label>
+                <Textarea name="careerGoals" placeholder="What are your career aspirations? (e.g., transition to Data Engineering, get promoted to DevOps Lead)" />
+              </div>
+              <div>
+                <Label>Why are you interested in this course?</Label>
+                <Textarea name="motivation" placeholder="Tell us what motivated you to consider this course..." />
+              </div>
+              <div>
+                <Label>When are you planning to start?</Label>
+                <Select name="timeline">
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select timeline" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="immediately">Immediately</SelectItem>
+                    <SelectItem value="1month">Within 1 month</SelectItem>
+                    <SelectItem value="3months">Within 3 months</SelectItem>
+                    <SelectItem value="6months">Within 6 months</SelectItem>
+                    <SelectItem value="exploring">Just exploring</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <Label>Any specific questions? (Optional)</Label>
+                <Textarea name="questions" placeholder="Any specific questions about the course, curriculum, or career prospects?" />
               </div>
               <Button type="submit" className="w-full">
                 <Calendar className="mr-2 h-5 w-5" /> Schedule My Demo

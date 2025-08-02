@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -11,13 +10,41 @@ import Footer from '@/components/Footer';
 const Courses = () => {
   const courses = [
     {
+      id: 'data-engineering',
+      title: "Data Engineering",
+      description: "Master data pipelines, ETL processes, and big data technologies",
+      longDescription: "Learn Python, SQL, Apache Spark, AWS/Azure data services, ETL pipelines, and real-time data processing. Build scalable data infrastructure for modern enterprises.",
+      duration: "16 Weeks",
+      rating: 4.9,
+      students: 450,
+      level: "Intermediate to Advanced",
+      features: [
+        "Python & SQL Mastery",
+        "Apache Spark & Big Data",
+        "AWS/Azure Data Services",
+        "ETL Pipeline Development",
+        "Real-time Data Processing",
+        "Data Warehousing",
+        "Industry Projects",
+        "Career Support"
+      ],
+      syllabus: [
+        "Introduction to Data Engineering",
+        "Data Engineering Ecosystem",
+        "Build Effective Data Pipelines and Architecture",
+        "Scala + Spark and Spark SQL",
+        "Hadoop and its Ecosystem",
+        "NoSQL Databases",
+        "Apache Kafka",
+        "Cloud Data Platforms"
+      ]
+    },
+    {
       id: 'devops',
       title: "DevOps Masterclass",
       description: "Master the complete DevOps lifecycle with hands-on experience",
       longDescription: "Learn Jenkins, Docker, AWS, Kubernetes, CI/CD pipelines, Infrastructure as Code, monitoring, and deployment strategies. Get industry-ready with real-world projects.",
       duration: "12 Weeks",
-      price: "₹45,000",
-      originalPrice: "₹60,000",
       rating: 4.8,
       students: 500,
       level: "Intermediate to Advanced",
@@ -43,35 +70,33 @@ const Courses = () => {
       ]
     },
     {
-      id: 'testing',
-      title: "Automation Testing",
-      description: "Become an expert in test automation with modern frameworks",
-      longDescription: "Master Selenium WebDriver, API Testing, Mobile Testing, Test Frameworks, and CI/CD integration. Build robust automation suites for web and mobile applications.",
-      duration: "10 Weeks",
-      price: "₹35,000",
-      originalPrice: "₹45,000",
+      id: 'ml-ai',
+      title: "Machine Learning & AI",
+      description: "Build intelligent systems with cutting-edge ML and AI technologies",
+      longDescription: "Master Python, machine learning algorithms, deep learning, TensorFlow, MLOps, and generative AI. Create intelligent applications that solve real-world problems.",
+      duration: "18 Weeks",
       rating: 4.9,
-      students: 350,
-      level: "Beginner to Advanced",
+      students: 380,
+      level: "Intermediate to Advanced",
       features: [
-        "Selenium WebDriver",
-        "API Testing with REST Assured",
-        "Mobile Test Automation",
-        "Test Framework Design",
-        "CI/CD Integration",
-        "Performance Testing",
-        "Hands-on Projects",
-        "Interview Preparation"
+        "Python for ML/AI",
+        "Machine Learning Algorithms",
+        "Deep Learning & Neural Networks",
+        "TensorFlow & PyTorch",
+        "MLOps & Model Deployment",
+        "Generative AI & LLMs",
+        "Computer Vision & NLP",
+        "Industry Mentorship"
       ],
       syllabus: [
-        "Manual Testing Fundamentals",
-        "Java for Automation",
-        "Selenium WebDriver",
-        "TestNG & JUnit Frameworks",
-        "API Testing with Postman & REST Assured",
-        "Mobile Automation with Appium",
-        "CI/CD Integration",
-        "Performance Testing Basics"
+        "Python Programming for AI/ML",
+        "Statistics and Mathematics for ML",
+        "Machine Learning Fundamentals",
+        "Supervised & Unsupervised Learning",
+        "Deep Learning & Neural Networks",
+        "Natural Language Processing",
+        "Computer Vision",
+        "MLOps and Model Deployment"
       ]
     },
     {
@@ -80,8 +105,6 @@ const Courses = () => {
       description: "Complete full-stack development with Java ecosystem",
       longDescription: "Learn Core Java, Spring Boot, Microservices, REST APIs, React/Angular, and database management. Build complete web applications from scratch.",
       duration: "16 Weeks",
-      price: "₹55,000",
-      originalPrice: "₹75,000",
       rating: 4.7,
       students: 600,
       level: "Beginner to Advanced",
@@ -107,13 +130,41 @@ const Courses = () => {
       ]
     },
     {
+      id: 'testing',
+      title: "Automation Testing",
+      description: "Become an expert in test automation with modern frameworks",
+      longDescription: "Master Selenium WebDriver, API Testing, Mobile Testing, Test Frameworks, and CI/CD integration. Build robust automation suites for web and mobile applications.",
+      duration: "10 Weeks",
+      rating: 4.9,
+      students: 350,
+      level: "Beginner to Advanced",
+      features: [
+        "Selenium WebDriver",
+        "API Testing with REST Assured",
+        "Mobile Test Automation",
+        "Test Framework Design",
+        "CI/CD Integration",
+        "Performance Testing",
+        "Hands-on Projects",
+        "Interview Preparation"
+      ],
+      syllabus: [
+        "Manual Testing Fundamentals",
+        "Java for Automation",
+        "Selenium WebDriver",
+        "TestNG & JUnit Frameworks",
+        "API Testing with Postman & REST Assured",
+        "Mobile Automation with Appium",
+        "CI/CD Integration",
+        "Performance Testing Basics"
+      ]
+    },
+    {
       id: 'dotnet',
       title: ".NET Development",
       description: "Master Microsoft .NET ecosystem for enterprise development",
       longDescription: "Learn C#, ASP.NET Core, MVC, Web APIs, Entity Framework, and Azure deployment. Build scalable enterprise applications with Microsoft technologies.",
       duration: "14 Weeks",
-      price: "₹50,000",
-      originalPrice: "₹65,000",
       rating: 4.8,
       students: 280,
       level: "Intermediate",
@@ -212,27 +263,18 @@ const Courses = () => {
                     </div>
                   </div>
 
-                  {/* Pricing and CTA */}
-                  <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-2xl font-bold text-blue-600">{course.price}</span>
-                        <span className="text-lg text-gray-400 line-through">{course.originalPrice}</span>
-                      </div>
-                      <p className="text-sm text-green-600 font-medium">EMI Available</p>
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <Button className="bg-blue-600 hover:bg-blue-700">
-                        View Details
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                  {/* CTA Buttons - No Pricing */}
+                  <div className="flex flex-col gap-3 pt-4 border-t border-gray-100">
+                    <Button className="bg-blue-600 hover:bg-blue-700 w-full">
+                      View Details
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                    <Link to="/demo" className="w-full">
+                      <Button variant="outline" size="default" className="w-full">
+                        <Calendar className="mr-2 h-4 w-4" />
+                        Free Demo
                       </Button>
-                      <Link to="/demo">
-                        <Button variant="outline" size="sm" className="w-full">
-                          <Calendar className="mr-2 h-4 w-4" />
-                          Free Demo
-                        </Button>
-                      </Link>
-                    </div>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -301,9 +343,11 @@ const Courses = () => {
                 Book Free Demo
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
-              Talk to Counsellor
-            </Button>
+            <a href="https://wa.me/917499476837" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
+                Talk to Counsellor
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -314,3 +358,4 @@ const Courses = () => {
 };
 
 export default Courses;
+

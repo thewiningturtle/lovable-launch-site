@@ -91,7 +91,7 @@ const Index = () => {
             🎯 Trusted by 2000+ Professionals
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Launch Your <span className="text-yellow-300">Tech Career</span> with Real IT Skills
+            Get <span className="text-yellow-300">Job-Ready</span> with Real IT Skills
           </h1>
           <h2 className="text-xl md:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto">
             Master <strong>Data Engineering</strong>, <strong>DevOps</strong>, <strong>ML/AI</strong> and <strong>Java</strong> at <span className="text-yellow-400">LinuxForge</span> – India's most trusted IT training institute.

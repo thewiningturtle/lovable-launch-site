@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -16,22 +15,25 @@ const Footer = () => {
                 <span className="text-white font-bold text-xl">IT</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-xl">TechTraining</span>
-                <span className="text-xs text-gray-400">Institute</span>
+                <span className="font-bold text-xl">LinuxForge</span>
               </div>
             </div>
             <p className="text-gray-400 mb-4">
               India's most trusted IT training platform for professionals and job seekers.
             </p>
             <div className="flex space-x-3">
-              <Button size="sm" className="bg-green-600 hover:bg-green-700">
-                <MessageCircle className="h-4 w-4 mr-2" />
-                WhatsApp
-              </Button>
-              <Button size="sm" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800">
-                <Phone className="h-4 w-4 mr-2" />
-                Call
-              </Button>
+              <a href="https://wa.me/917499476837" target="_blank" rel="noopener noreferrer">
+                <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                  <MessageCircle className="h-4 w-4 mr-2" />
+                  WhatsApp
+                </Button>
+              </a>
+              <a href="tel:+917499476837">
+                <Button size="sm" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800">
+                  <Phone className="h-4 w-4 mr-2" />
+                  Call
+                </Button>
+              </a>
             </div>
           </div>
 
@@ -68,17 +70,27 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  Data Engineering
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   DevOps Masterclass
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Automation Testing
+                  Machine Learning & AI
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Java Full Stack
+                  Java Full Stack Development
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  Automation Testing
                 </a>
               </li>
               <li>
@@ -99,11 +111,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Phone className="h-4 w-4 mr-3 text-blue-400" />
-                <span className="text-gray-400 text-sm">+91 98765 43210</span>
+                <span className="text-gray-400 text-sm">+91 7499476837</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-4 w-4 mr-3 text-blue-400" />
-                <span className="text-gray-400 text-sm">info@techtraining.com</span>
+                <span className="text-gray-400 text-sm">thewiningturtle@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <Clock className="h-4 w-4 mr-3 text-blue-400" />
@@ -116,7 +128,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 TechTraining Institute. All rights reserved.
+              © 2024 LinuxForge. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
@@ -137,3 +149,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

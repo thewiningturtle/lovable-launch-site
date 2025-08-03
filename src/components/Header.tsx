@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -22,7 +21,6 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-xl text-gray-900">LinuxForge</span>
-              <span className="text-xs text-gray-500">Institute</span>
             </div>
           </Link>
 
@@ -44,13 +42,20 @@ const Header = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-3">
-            <Button variant="outline" size="sm" className="flex items-center">
-              <Phone className="h-4 w-4 mr-2" />
-              Call Now
-            </Button>
+            <a href="tel:+917499476837">
+              <Button variant="outline" size="sm" className="flex items-center">
+                <Phone className="h-4 w-4 mr-2" />
+                Call Now
+              </Button>
+            </a>
+            <a href="https://wa.me/917499476837" target="_blank" rel="noopener noreferrer">
+              <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                <MessageCircle className="h-4 w-4 mr-2" />
+                Talk to Counsellor
+              </Button>
+            </a>
             <Link to="/demo">
               <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-                <MessageCircle className="h-4 w-4 mr-2" />
                 Book Demo
               </Button>
             </Link>
@@ -103,13 +108,20 @@ const Header = () => {
                 Free Demo
               </Link>
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
-                <Button variant="outline" size="sm" className="w-full">
-                  <Phone className="h-4 w-4 mr-2" />
-                  Call Now
-                </Button>
+                <a href="tel:+917499476837">
+                  <Button variant="outline" size="sm" className="w-full">
+                    <Phone className="h-4 w-4 mr-2" />
+                    Call Now
+                  </Button>
+                </a>
+                <a href="https://wa.me/917499476837" target="_blank" rel="noopener noreferrer">
+                  <Button size="sm" className="w-full bg-green-600 hover:bg-green-700">
+                    <MessageCircle className="h-4 w-4 mr-2" />
+                    Talk to Counsellor
+                  </Button>
+                </a>
                 <Link to="/demo">
                   <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700">
-                    <MessageCircle className="h-4 w-4 mr-2" />
                     Book Demo
                   </Button>
                 </Link>
@@ -123,3 +135,4 @@ const Header = () => {
 };
 
 export default Header;
+

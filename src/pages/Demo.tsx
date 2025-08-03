@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -19,10 +19,10 @@ const Demo = () => {
     e.preventDefault();
 
     emailjs.sendForm(
-      'YOUR_SERVICE_ID',
-      'YOUR_TEMPLATE_ID',
+      'service_2k7byuv',
+      'template_jzzn6jb',
       form.current!,
-      'YOUR_PUBLIC_KEY'
+      'ZmKRpyzX18nVzKqIu'
     ).then(
       () => {
         toast({

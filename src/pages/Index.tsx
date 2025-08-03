@@ -282,10 +282,10 @@ const Index = () => {
                 Book Free Demo
               </Button>
             </Link>
-            <a href="tel:+917499476837">
+            <a href="https://wa.me/917499476837" target="_blank" rel="noopener noreferrer">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4">
-                <Phone className="mr-2 h-5 w-5" />
-                Call +91 7499476837
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Talk to Counsellor
               </Button>
             </a>
           </div>

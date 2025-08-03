@@ -41,7 +41,7 @@ const Demo = () => {
     );
   };
 
-  const courses = ["Data Engineering", "DevOps Masterclass", "Machine Learning & AI", "Java Full Stack Development"];
+  const courses = ["Data Engineering", "DevOps Masterclass", "Machine Learning & AI", "Java Full Stack Development", "Cloud Computing & AWS", "Cybersecurity & Ethical Hacking"];
   const timeSlots = ["10:00 AM - 11:00 AM", "2:00 PM - 3:00 PM", "4:00 PM - 5:00 PM", "6:00 PM - 7:00 PM", "8:00 PM - 9:00 PM"];
   const benefits = [
     { icon: Users, title: "Live Interaction", description: "Direct interaction with industry experts" },
